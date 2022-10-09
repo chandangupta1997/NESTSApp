@@ -11,23 +11,47 @@ express
 
 mongoose for mongoDB
 
+json web token for authentication and autrization  
+
 
 Ability to create multiple tasks with properties, id, description,due_date, assignee, status, etc.
 
 Ability to add a team with various team members  
 Ans :-
-this has been handles through userModel  as we have a section of TeamName in userModel
+this has been handles through userModel  as we have a section 
+of TeamName in userModel 
+
+so user having same teamName will be in Same Team 
+
+ teamName:{
+        type:String
+
+    },
 
 
-Ability to assign a task to a team member
-Ans :- while assigning you can add their unique userId or if you want to assign by Name then we will search in database for his/her id and proceed 
+
+Task:- Ability to assign a task to a team member
+solution :- while assigning you can add their unique userId or if you want to assign by Name then we will search in database for his/her id and proceed 
 
 
-Ability to load all tasks with the assignee
 
 
-ans:-  assigned Task field in userModel   
+
+
+
+
+
+
+
+
+
+task :-Ability to load all tasks with the assignee
+
+
+Solution :-  assigned Task field in userModel   
 as assignedTask:[]
+
+
 
 
 
@@ -43,7 +67,12 @@ Use Typeform for ORM
 
 Use Mysql/Mssql/Mongo for storing the tasks/team info
 
+ans:- used MongoDb
+
+
 All the APIs need to be authenticated with a bearer token
+
+
 
 Hardcoded user credentials can be used to generate jwt token ( use .env for storing creds)
 
