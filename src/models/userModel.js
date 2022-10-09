@@ -30,10 +30,14 @@ const userSchema = new mongoose.Schema({
 
 
 
-    assignedTasked:{
-        type:Array  // it will conatin unique mongoDb id of task 
-            // [63414d3cd4f03f0cf766f669,63414d67190705de854cfbbf] and we will populate this 
-    },
+    assignedTask:[],
+    
+    // {
+    //     type:Array  // it will conatin unique mongoDb id of task 
+    //         // [63414d3cd4f03f0cf766f669,63414d67190705de854cfbbf] and we will populate this 
+    // },
+
+    
 
     email:{
         type:String

@@ -27,6 +27,9 @@ const createUser = async function(req,res){
         "assignedTask":assignedTask
     }
 
+    console.log(mongoObject)
+    //return 
+
     const createdUser =  await userModel.create(mongoObject)
 
 

@@ -44,7 +44,7 @@ const taskSchema = new mongoose.Schema({
     
     },
 
-    assignedTo:{
+    assignedBy:{
         type:ObjectId,
         ref:'user'
 

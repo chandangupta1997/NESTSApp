@@ -65,6 +65,10 @@ ans: status:{
 
 Use Typeform for ORM
 
+ans:- Object relational Mapping is done via mongoose model 
+
+
+
 Use Mysql/Mssql/Mongo for storing the tasks/team info
 
 ans:- used MongoDb
