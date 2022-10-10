@@ -78,4 +78,22 @@ const login = async function(req,res){
 
 }
 
-module.exports ={createUser}
+
+const userTaskDetails = async function (req,res){
+
+    let userId = req.query.userId
+
+    let user = await userModel.findById(userId)
+    if(!user){
+        return res.status(404).send('user Not Found ')
+    }
+
+    res.send(user)
+
+    
+}
+
+module.exports ={createUser,login,userTaskDetails}
+
+
+

@@ -26,6 +26,6 @@ mongoose.connect(process.env.mongoString, {
 
 
 
-app.listen(process.env.port,console.log(`${process.env.port}`))
+app.listen(process.env.port,console.log(`app is running on port ${process.env.port}`))
 
 app.use('/',route)

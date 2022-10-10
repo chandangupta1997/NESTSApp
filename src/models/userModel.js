@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
     },
 
     teamName:{
-        type:Array
+        type:String
 
     },
 

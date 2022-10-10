@@ -67,5 +67,22 @@ const createTask = async function(req,res){
 
 }
 
+const getTaskById = async function(req,res){
 
-module.exports ={createTask}
+    const  taskId = req.query.taskId
+
+
+    const task = await taskModel.findById(taskId)
+
+    if(!task){
+        return 
+    }
+
+    res.send(task)
+    
+
+    
+}
+
+
+module.exports ={createTask,getTaskById}
