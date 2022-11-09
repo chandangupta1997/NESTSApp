@@ -1,132 +1,75 @@
-//Viamagus - Node JS Developer Challenge for Chandan Gupta
-// NESTS Apps with the CRUD (Create,Read,upadate,delete ) functionality of task 
-// task  must have a assignee (i have also add assignedBy)
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+</p>
 
+[travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
+[travis-url]: https://travis-ci.org/nestjs/nest
+[linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
+[linux-url]: https://travis-ci.org/nestjs/nest
+  
+  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
+<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
+<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
+<a href="https://gitter.im/nestjs/nestjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/nestjs/nestjs.svg" alt="Gitter" /></a>
+<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
+  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+## Description
 
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-// Packages used 
-{
-  "dependencies": {
-    "body-parser": "^1.20.1",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.6.5",
-    "nodemon": "^2.0.20"
-  }
+## Installation
 
+```bash
+$ npm install
+```
 
-mongoose for mongoDB
+## Running the app
 
-json web token for authentication and authrisation  
+```bash
+# development
+$ npm run start
 
+# watch mode
+$ npm run start:dev
 
-Task 1:-Ability to create multiple tasks with properties, id, description,due_date, assignee, status, etc.
+# production mode
+$ npm run start:prod
+```
 
-Task 2 :- Ability to add a team with various team members  
-Ans :-
-this has been handles through userModel  as we have a section 
-of TeamName in userModel 
+## Test
 
-so user having same teamName will be in Same Team 
+```bash
+# unit tests
+$ npm run test
 
- teamName:{
-        type:String
+# e2e tests
+$ npm run test:e2e
 
-    },
+# test coverage
+$ npm run test:cov
+```
 
+## Support
 
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-Task 3:- Ability to assign a task to a team member
-solution :- while assigning you can add their unique userId or if you want to assign by Name then we will search in database for his/her id and proceed 
+## Stay in touch
 
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
 
+## License
 
-
-
-
-
-
-
-
-
-
-
-task 4  :-Ability to load all tasks with the assignee
-
-
-Solution :-  assigned Task field in userModel   
-as assignedTask:[]
-
-
-
-
-
-Task 5 : Ability to change the status/properties of task
-
-ans: status:{
-        type:Boolean,
-        required:true
-    }
-
-
-task 6:-Use Typeform for ORM
-
-ans:- Object relational Mapping is done via mongoose model 
-
-
-
-task 7 :- Use Mysql/Mssql/Mongo for storing the tasks/team info
-
-ans:- used MongoDb
-
-
-task 8 :- All the APIs need to be authenticated with a bearer token
-
-
-
-Hardcoded user credentials can be used to generate jwt token ( use .env for storing creds)
-
-ans : apis are protected with the authentication and authorisation using jwt. and .env  file is created to prevent sensitive information 
-
-
-
-
-{
-    "title": " this is task 1",
-    "description": " this is description of task 1 ",
-    "assignedDate": "2021-12-31T18:30:00.000Z",
-    "dueDate": "2022-05-01T18:30:00.000Z",
-    "assignee": "63414c5ed3dd90cbd3a56e08",
-    "assignedTo": "63414cd4d3dd90cbd3a56e0a",
-    "status": false,
-    "_id": "63414d67190705de854cfbbf",
-    "__v": 0
-}
-
-
-
-
-{
-    "_id": "63438830fa00c83e60392d84",
-    "fName": "Chandan  i  ",
-    "lName": "gupta io ",
-    "age": 21,
-    "teamName": "junior ",
-    "assignedTask": [
-        "",
-        {
-            "title": " this is task 1",
-            "description": " this is description of task 1 ",
-            "assignedDate": "2021-12-31T18:30:00.000Z",
-            "dueDate": "2022-05-01T18:30:00.000Z",
-            "assignee": "63438830fa00c83e60392d84",
-            "assignedBy": "634382d791427b04e3638212",
-            "status": false,
-            "_id": "6343885efa00c83e60392d87",
-            "__v": 0
-        }
-    ],
-    "__v": 0
-}
+  Nest is [MIT licensed](LICENSE).
